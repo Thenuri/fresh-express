@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +14,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('dashboard', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomeController::class,'checkRoleid']);
+
+
+ 
+Route::resource('dashboard/customer', CustomerController::class)->name('index', 'customer');
+
+
+
+
+Route::get('/admin', function () {
+    return view('dashboard.index');
+})->name('admin.dashboard');
+
+Route::get('/employee', function () {
+    return view('dashboard.index');
+})->name('employee.dashboard');
+
+Route::get('/driver', function () {
+    return view('driver');
+})->name('driver.dashboard');
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [HomeController::class,'checkRoleid']);
 });
