@@ -31,6 +31,7 @@ class User extends Authenticatable
         'dob',
         'password',
         'role_id',
+        'status'
     ];
 
     /**
@@ -62,4 +63,6 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    
 }

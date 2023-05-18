@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Approval;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 /*
@@ -23,20 +25,31 @@ Route::get('/', [HomeController::class,'checkRoleid']);
  
 Route::resource('dashboard/customer', CustomerController::class)->name('index', 'customer');
 
+Route::resource('dashboard/employee', EmployeeController::class)->name('index', 'employee');
+
+
+//Route::get('/admin/approval', [AdminController::class, 'approval'])->name('admin.approval');
+Route::resource('dashboard/approval', Approval::class)->name('index', 'approval');
+
+Route::post('/admin/change-status/{user}', [Approval::class, 'switchStatus'])->name('admin.approve');
 
 
 
 Route::get('/admin', function () {
     return view('dashboard.index');
-})->name('admin.dashboard');
+})->name('admin.dashboard')
+->middleware(['adminOrEmployee','userApproved']);
+
 
 Route::get('/employee', function () {
     return view('dashboard.index');
-})->name('employee.dashboard');
+})->name('employee.dashboard')
+->middleware([ 'userApproved']);
 
 Route::get('/driver', function () {
     return view('driver');
-})->name('driver.dashboard');
+})->name('driver.dashboard')
+->middleware(['userApproved']);
 
 Route::middleware([
     'auth:sanctum',

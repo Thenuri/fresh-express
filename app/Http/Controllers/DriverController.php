@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class DriverController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $customers = User::where('role_id', 4)->get();
-        return view('dashboard.customer', ['customers' => $customers]);
+        // $drivers = User::where('role_id', 3)->get();
+        // return view('dashboard.employee', ['drivers' => $drivers]);
     }
+    
 
     /**
      * Show the form for creating a new resource.

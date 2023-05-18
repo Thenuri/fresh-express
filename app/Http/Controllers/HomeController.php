@@ -9,9 +9,8 @@ class HomeController extends Controller
 {
     public function checkRoleid()
     {
-       if(Auth::user())
+       if(Auth::user()->role_id == 1)
        {
-
            return redirect()->route('admin.dashboard');
        }
        if(Auth::user()->role_id == 2)

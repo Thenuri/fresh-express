@@ -12,17 +12,18 @@
                        </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100">
+                     @foreach($customers as $customer)
                        <tr class="text-gray-500">
-                          <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Nimal mendis</th>
-                          <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">thalawathugoda</td>
-                          <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">0778457892</td>
+                          <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $customer->name }}</th>
+                          <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">{{ $customer->address }}</td>
+                          <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">{{ $customer->phone }}</td>
                           <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                             <x-button>
                                 {{ __('More') }}
                             </x-button>
                           </td>
                        </tr>
-                       
+                       @endforeach  
                     </tbody>
                  </table>
               </div>
