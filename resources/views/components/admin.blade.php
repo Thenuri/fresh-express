@@ -15,7 +15,7 @@
                                          <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                                       </svg>
                                    </div>
-                                   <input type="text" name="email" id="mobile-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5" placeholder="Search">
+                                   <input type="text" name="email" id="mobile-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:ring-cyan-600 block w-full pl-10 p-2.5" placeholder="Search">
                                 </div>
                              </form> 
                           </li> --}}
@@ -62,19 +62,19 @@
                                 <span class="ml-3 flex-1 whitespace-nowrap">Approvals</span>
                              </a>
                           </li> --}}
-                       </ul>  
-                    </div>
-                 </div>
-              </div>
-           </aside>
-           <div class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
-           <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
-              <main>
+                     </ul>  
+                  </div>
+               </div>
+            </div>
+         </aside>
+         <div class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
+         <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
+            <main>
                {{ $slot }}
-              </main>
-           </div>
+            </main>
+         </div>
       </div>
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+      <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
    </div> 
 </x-app-layout>

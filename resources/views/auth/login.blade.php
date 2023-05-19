@@ -8,7 +8,6 @@
                 {{ session('errormessage') }}
             </div>
         @endif
-
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -16,9 +15,6 @@
                 {{ session('status') }}
             </div>
         @endif
-
-        
-
         <form method="POST" action="{{ route('login') }}">
             @csrf
 

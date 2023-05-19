@@ -23,7 +23,6 @@ class RedirectIfNotApproved
             if (Auth::user()->status == 0) {
                 // Logout the user
                 Auth::logout();
-
                 // Redirect to login
                 return redirect()->route('login')->with('errormessage', 'Your account is not active. Please contact the administrator.');
             }
