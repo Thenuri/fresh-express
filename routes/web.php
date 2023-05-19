@@ -21,17 +21,16 @@ use App\Http\Controllers\HomeController;
 // });
 Route::get('/', [HomeController::class,'checkRoleid']);
 
-
- 
 Route::resource('dashboard/customer', CustomerController::class)->name('index', 'customer');
 
 Route::resource('dashboard/employee', EmployeeController::class)->name('index', 'employee');
-
 
 //Route::get('/admin/approval', [AdminController::class, 'approval'])->name('admin.approval');
 Route::resource('dashboard/approval', Approval::class)->name('index', 'approval');
 
 Route::post('/admin/change-status/{user}', [Approval::class, 'switchStatus'])->name('admin.approve');
+Route::view('dashboard/orders', 'dashboard.orders')->name('orders');
+Route::view('dashboard/products', 'dashboard.products')->name('products');
 
 
 
@@ -47,7 +46,7 @@ Route::get('/employee', function () {
 ->middleware([ 'userApproved']);
 
 Route::get('/driver', function () {
-    return view('driver');
+    return view('driverdash');
 })->name('driver.dashboard')
 ->middleware(['userApproved']);
 
