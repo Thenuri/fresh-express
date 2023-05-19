@@ -149,7 +149,7 @@
               <div class="flex items-center">
                  <div class="flex-shrink-0">
                     <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">5,355</span>
-                    <h3 class="text-base font-normal text-gray-500">Visitors this week</h3>
+                    <h3 class="text-base font-normal text-gray-500">Total Customers</h3>
                  </div>
                  <div class="ml-5 w-0 flex items-center justify-end flex-1 text-green-500 text-base font-bold">
                     32.9%
