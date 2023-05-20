@@ -119,9 +119,9 @@ class DatabaseSeeder extends Seeder
         'password' => Hash::make('customerpassword'),
     ],
 ];
-foreach ($users as $users) {
-    User::create($users);
-}
+    foreach ($users as $users) {
+        User::create($users);
+    }
 
         
 
