@@ -15,7 +15,7 @@
    <script>
       setTimeout(function() {
          document.querySelector('[x-data="{ show: true }"]').remove();
-      },5000); // 5000 milliseconds = 5 seconds
+      },1500); // 5000 milliseconds = 5 seconds
    </script>
 @endif
 
