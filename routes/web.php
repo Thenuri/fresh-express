@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('dashboard/employee', EmployeeController::class)->name('index', 'employee');
     Route::resource('dashboard/approval', Approval::class)->name('index', 'approval');
     Route::view('dashboard/orders', 'dashboard.orders')->name('orders');
-    Route::view('dashboard/products', 'dashboard.products')->name('products');
+    //Route::view('dashboard/products', 'dashboard.products')->name('products');
 });
 
 Route::get('/admin', function () {
@@ -57,4 +57,10 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/', [HomeController::class,'checkRoleid']);
+});
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+    Route::get('/dashboard/products', function () {
+        return view('dashboard.products');
+    })->name('products');
 });
