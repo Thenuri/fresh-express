@@ -24,7 +24,7 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required', 'string', 'min:10', 'max:10','regex:/^\d+$/'],
+            'phone' => ['required', 'string', 'min:10', 'max:10','regex:/^\d+$/','unique:users'],
             'address' => ['required', 'string', 'max:255'],
             'dob' => ['required', 'date', function($attribute, $value, $invalid) {
                 if (!strtotime($value)) {
