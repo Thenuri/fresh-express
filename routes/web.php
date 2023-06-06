@@ -70,3 +70,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         return view('dashboard.promotion');
     })->name('promotion');
 });
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+    Route::get('/dashboard/supplier', function () {
+        return view('dashboard.supplier');
+    })->name('supplier');
+});
