@@ -40,7 +40,7 @@
        </div>
        <div class="mt-8 text-2xl flex justify-between">
           <div>
-             <h3 class="text-xl leading-none font-bold text-gray-900 mb-10">Products</h3>
+             <h3 class="text-xl leading-none font-bold text-gray-900 mb-10">Promotions</h3>
           </div>
           <div class="mr-2">
              <x-buttondash wire:click="confirmPromoAdd">
