@@ -10,8 +10,9 @@ class HomeController extends Controller
     public function checkRoleid()
     {
        if(Auth::user()->role_id == 1)
-       {
-           return redirect()->route('admin.dashboard');
+       {   
+         $adminStatusController = new AdminDashboardStatusController();
+           return $adminStatusController->index();
        }
        if(Auth::user()->role_id == 2)
        {
