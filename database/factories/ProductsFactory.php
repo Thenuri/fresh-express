@@ -21,6 +21,7 @@ class ProductsFactory extends Factory
             'name'=>$this->faker->word,
             'price'=>$this->faker->randomNumber(2),
             'quantity'=>$this->faker->randomNumber(2),
+            'image' => $this->faker->image('public/storage/images', 400, 300, null, false), // Adding the image field
         ];
     }
 }
