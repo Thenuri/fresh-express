@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Approval;
+use App\Http\Controllers\AdminDashboardStatusController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use Illuminate\Routing\Controllers\Middleware;
@@ -36,10 +37,14 @@ Route::middleware(['auth'])->group(function () {
     //Route::view('dashboard/products', 'dashboard.products')->name('products');
 });
 
-Route::get('/admin', function () {
-    return view('dashboard.index');
-})->name('admin.dashboard')
-->middleware(['adminOrEmployee','auth']);
+// Route::get('/admin', function () {
+//     return view('dashboard.index');
+// })->name('admin.dashboard')
+// ->middleware(['adminOrEmployee','auth']);
+
+Route::get('/admin', [AdminDashboardStatusController::class, 'index'])
+    ->name('admin.dashboard')
+    ->middleware(['adminOrEmployee', 'auth']);
 
 Route::get('/employee', function () {
     return view('dashboard.index');
