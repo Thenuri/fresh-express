@@ -76,10 +76,4 @@
          </table>
       </div>
    </div> 
-
-
-   
-
-
-
 </x-admin>
