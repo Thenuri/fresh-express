@@ -132,15 +132,6 @@ class ApiUserController extends Controller
         // Handle the case when customer details are not found
         return response()->json(['error' => 'Customer details not found'], 404);
     }
-}
-
-
-
-
-
-
-
-    
-    
+}   
 
 }
