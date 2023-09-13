@@ -31,7 +31,9 @@ class User extends Authenticatable
         'dob',
         'password',
         'role_id',
-        'status'
+        'status',
+        'api_token'
+        
     ];
 
     /**

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ApiCartController;
+use App\Http\Controllers\CartController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,7 @@ use App\Http\Controllers\ApiCartController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->post('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -35,7 +37,24 @@ Route::get('/products/categories', [ProductController::class, 'getProductCategor
 Route::get('/products/category/{categoryName}', [ProductController::class, 'getProductsByCategoryName']);
 
 //Cart 
-Route::post('/add-to-cart', [ApiCartController::class, 'addToCart']);
+// Route::post('/add-to-cart', 'CartController@addToCart')->middleware('api.token');
+
+
+// Route::group(['middleware' => 'api.token'], function () {
+//     Route::post('/add-to-cart', 'CartController@addToCart');
+    
+// });
+
+// Route::middleware('auth:sanctum')->post('/add-to-cart', function (Request $request) {
+//     return $request->user();
+    
+// });
+
+
+Route::middleware('auth:sanctum')->post('/add-to-cart', [CartController::class, 'addToCart']);
+
+
+
 
 // http://127.0.0.1:8000/api/products/categories/Fruit/
 

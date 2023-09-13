@@ -42,6 +42,8 @@ class Kernel extends HttpKernel
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+           
+
         ],
     ];
 
@@ -68,6 +70,8 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         // Other middleware entries...
         'adminOrEmployee' => \App\Http\Middleware\RedirectIfNotAdminOrEmployee::class,
+        'api.token' => \App\Http\Middleware\ApiTokenAuth::class,
+
     ];
     
 }
