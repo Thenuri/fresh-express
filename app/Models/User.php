@@ -64,5 +64,15 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
     
 }

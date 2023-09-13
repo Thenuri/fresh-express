@@ -16,6 +16,14 @@ class Prodcts extends Component
     public $image;
     public $confirmProductDeletion = false;
     public $confirmProductAdd = false;
+
+    protected $rules = [
+        'product.name' => 'required|string|min:4',
+        'product.quantity' => 'required|string|between:1,1000',
+        'product.price' => 'required|numeric|between:1,1000000',
+        'product.category' => 'required',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:102400',
+    ];
     
     protected $queryString = [
         'q'=>['except'=>''],
@@ -61,16 +69,16 @@ class Prodcts extends Component
     }
     public function saveproduct()
     {
-        $productRules = [
-            'product.name' => 'required|string|min:4',
-            'product.quantity' => 'required|string|between:1,1000',
-            'product.price' => 'required|numeric|between:1,1000000',
-            'product.category' => 'required',
-        ];
-        $imageRules = [
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:102400',
-        ];
-
+        // $productRules = [
+        //     'product.name' => 'required|string|min:4',
+        //     'product.quantity' => 'required|string|between:1,1000',
+        //     'product.price' => 'required|numeric|between:1,1000000',
+        //     'product.category' => 'required',
+        // ];
+        // $imageRules = [
+        //     'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:102400',
+        // ];
+        $this->validate();
         $imagePath = '';
 
         if ($this->image instanceof \Illuminate\Http\UploadedFile) {

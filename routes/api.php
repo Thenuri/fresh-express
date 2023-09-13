@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ApiCartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,14 @@ Route::get('/products/categories', [ProductController::class, 'getProductCategor
 // Get products by category name
 Route::get('/products/category/{categoryName}', [ProductController::class, 'getProductsByCategoryName']);
 
+//Cart 
+Route::post('/add-to-cart', [ApiCartController::class, 'addToCart']);
+
 // http://127.0.0.1:8000/api/products/categories/Fruit/
+
+
+
+
 
 // send hello
 Route::get('hello', function () {
