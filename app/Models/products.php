@@ -15,4 +15,12 @@ class products extends Model
         'category',
         'image',
     ];
+
+    // public function orders()
+    // {
+    //     return $this->belongsToMany(Order::class);
+    // }
 }
+
+
+

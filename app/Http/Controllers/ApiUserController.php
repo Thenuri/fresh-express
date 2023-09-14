@@ -56,6 +56,7 @@ class ApiUserController extends Controller
         // return response()->json($request);
 
 
+        // echo "";
         $request->validate([
             'email' => 'required|email|unique:users,email',
             'password' => 'required',

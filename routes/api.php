@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ApiCartController;
 use App\Http\Controllers\CartController;
+
 
 
 /*
@@ -52,6 +54,10 @@ Route::get('/products/category/{categoryName}', [ProductController::class, 'getP
 
 
 Route::middleware('auth:sanctum')->post('/add-to-cart', [CartController::class, 'addToCart']);
+
+Route::middleware('auth:sanctum')->post('/complete-cart/{cart}', [OrderController::class, 'completeCart']);
+
+// Route::post('/complete-cart/{cart}', 'OrderController@completeCart');
 
 
 
