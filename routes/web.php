@@ -56,6 +56,11 @@ Route::get('/driver', function () {
 })->name('driver.dashboard')
 ->middleware(['userApproved']);
 
+Route::get('/customer-', function () {
+    return view('customerdash');
+})->name('customer.dashboard');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -81,3 +86,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         return view('dashboard.supplier');
     })->name('supplier');
 });
+
+//view customer details
+Route::get('/customerdetails/{user_id}', function ($userId) {
+    return view('dashboard.customer-details', compact('userId'));
+})->name('customerdetails');
+

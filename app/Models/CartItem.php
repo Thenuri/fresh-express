@@ -20,4 +20,10 @@ class CartItem extends Model
     {
         return $this->belongsTo(Cart::class);
     }
+
+    public function product()
+    {
+        return $this->belongsTo(products::class);
+    }
+
 }

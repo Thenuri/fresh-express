@@ -32,9 +32,13 @@
                            </form>
                            </td>
                           <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                           <a href={{route('customerdetails', [$customer->id]) }}>
+
                             <x-buttondash>
                                 {{ __('More') }}
                             </x-buttondash>
+                           </a>
+
                           </td>
                        </tr>
                        @endforeach  
