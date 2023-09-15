@@ -39,7 +39,7 @@ class OrderController extends Controller
         $deliveryFee = 50;
         $totalAmount= $cart->total + $deliveryFee;
         //Create an order 
-        Order::create([
+        $order=Order::create([
             'user_id' => $cart->user_id,
             'cart_id' => $cart->id,
             'total' => $totalAmount,
@@ -61,11 +61,12 @@ class OrderController extends Controller
             'cart_total'=> $cart->total,
             'delivery_fee'=> $deliveryFee,
             'total_amount'=> $totalAmount,
+            'order_created_date' => $order->created_at->toDateString(),
         ];
         
 
 
-        return response()->json([$response, 'order_number' => $orderNumber], 200);
+        return response()->json($response,200);
 
 
     }
