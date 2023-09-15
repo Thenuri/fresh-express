@@ -35,12 +35,14 @@ class OrderController extends Controller
         } else {
             $orderNumber = 'order1';
         }
-
+        
+        $deliveryFee = 50;
+        $totalAmount= $cart->total + $deliveryFee;
         //Create an order 
         Order::create([
             'user_id' => $cart->user_id,
             'cart_id' => $cart->id,
-            'total' => $cart->total,
+            'total' => $totalAmount,
             'status' => 'pending',
             'delivery_address' => $request->delivery_address,
             'ZIP_code' => $request->ZIP_code,
@@ -53,9 +55,17 @@ class OrderController extends Controller
              'is_paid' => true,
         ]);
 
+        $response = [
+            'message' => 'cart marked as completed',
+            'order_number' => $orderNumber,
+            'cart_total'=> $cart->total,
+            'delivery_fee'=> $deliveryFee,
+            'total_amount'=> $totalAmount,
+        ];
+        
 
 
-        return response()->json(['message' => 'cart marked as completed', 'order_number' => $orderNumber], 200);
+        return response()->json([$response, 'order_number' => $orderNumber], 200);
 
 
     }

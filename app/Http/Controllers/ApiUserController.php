@@ -116,23 +116,23 @@ class ApiUserController extends Controller
     }
 
     public function getCustomerDetails(Request $request): JsonResponse
-{
-    // Retrieve the customer details based on the API token
-    $user = Sanctum::actingAs($request->user(), ['*']);
+    {
+        // Retrieve the customer details based on the API token
+        $user = Sanctum::actingAs($request->user(), ['*']);
 
-    if ($user) {
-        // Return the customer details as JSON response
-        return response()->json([
-            'name' => $user->name,
-            'contactNumber' => $user->contact_number,
-            'address' => $user->address,
-            'dateOfBirth' => $user->date_of_birth,
-            'emailAddress' => $user->email,
-        ]);
-    } else {
-        // Handle the case when customer details are not found
-        return response()->json(['error' => 'Customer details not found'], 404);
-    }
-}   
+        if ($user) {
+            // Return the customer details as JSON response
+            return response()->json([
+                'name' => $user->name,
+                'contactNumber' => $user->contact_number,
+                'address' => $user->address,
+                'dateOfBirth' => $user->date_of_birth,
+                'emailAddress' => $user->email,
+            ]);
+        } else {
+            // Handle the case when customer details are not found
+            return response()->json(['error' => 'Customer details not found'], 404);
+        }
+    }   
 
 }
