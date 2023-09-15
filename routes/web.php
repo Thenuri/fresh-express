@@ -4,6 +4,7 @@ use App\Http\Controllers\Approval;
 use App\Http\Controllers\AdminDashboardStatusController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ShowLatestCustomersController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -46,10 +47,18 @@ Route::get('/admin', [AdminDashboardStatusController::class, 'index'])
     ->name('admin.dashboard')
     ->middleware(['adminOrEmployee', 'auth']);
 
-Route::get('/employee', function () {
-    return view('dashboard.index');
-})->name('employee.dashboard')
-->middleware(['adminOrEmployee','userApproved']);
+// Route::get('/latest-customers', [ShowLatestCustomersController::class, 'showLatestCustomers'])
+// ->name('latest-customers')
+// ->middleware(['adminOrEmployee', 'auth']);    
+
+Route::get('/employee', [AdminDashboardStatusController::class, 'index'])
+ ->name('employee.dashboard')
+ ->middleware(['adminOrEmployee', 'userApproved',]);
+
+// Route::get('/employee', function () {
+//     return view('dashboard.index');
+// })->name('employee.dashboard')
+// ->middleware(['adminOrEmployee','userApproved']);
 
 Route::get('/driver', function () {
     return view('driverdash');

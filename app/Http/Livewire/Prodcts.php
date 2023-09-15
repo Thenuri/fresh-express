@@ -19,7 +19,7 @@ class Prodcts extends Component
 
     protected $rules = [
         'product.name' => 'required|string|min:4',
-        'product.quantity' => 'required|string|between:1,1000',
+        'product.quantity' => 'required|numeric|between:1,10000',
         'product.price' => 'required|numeric|between:1,1000000',
         'product.category' => 'required',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:102400',
