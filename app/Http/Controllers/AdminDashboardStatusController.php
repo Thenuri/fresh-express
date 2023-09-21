@@ -21,8 +21,9 @@ class AdminDashboardStatusController extends Controller
         $mostOrderedProduct = $this->getMostOrderedProduct(); // Get the most ordered product
         $cartCount = $this->getNumberOfCarts();
         $orderCount = $this->getNumberOfOrders();
+        $weeklyRevenue = $this->getWeeklyRevenue();
 
-        return view('dashboard.index', compact('productsCount', 'employeesCount', 'customersCount', 'driversCount', 'latestOrders', 'mostOrderedProduct', 'cartCount' , 'orderCount'));
+        return view('dashboard.index', compact('productsCount', 'employeesCount', 'customersCount', 'driversCount', 'latestOrders', 'mostOrderedProduct', 'cartCount' , 'orderCount', 'weeklyRevenue'));
     }
 
     private function showLatestCustomers()
@@ -55,5 +56,18 @@ class AdminDashboardStatusController extends Controller
     private function getNumberOfOrders()
     {
         return Order::count();
+    }
+
+    private function getWeeklyRevenue()
+    {$weeklyRevenue = Order::select(
+        DB::raw('SUM(total) as total_revenue'),
+        DB::raw('strftime("%W", created_at) as week_number')
+        // For MySQL, you can use: DB::raw('WEEK(created_at) as week_number')
+    )
+    ->groupBy('week_number')
+    ->orderBy('week_number')
+    ->get();
+
+    return $weeklyRevenue;
     }
 }

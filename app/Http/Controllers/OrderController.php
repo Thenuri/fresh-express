@@ -26,20 +26,21 @@ class OrderController extends Controller
         // $delivery_type = $request->delivery_type;
         // return $address;
         //Make the cart as completed (is_paid = true)
-        
 
         // Find the highest order number in the database and increment it by 1
-        $latestOrderNumber = Order::max('order_number');
+        $latestOrderNumber = Order::max('id');
         if ($latestOrderNumber) {
-            $orderNumber = 'order' . (intval(substr($latestOrderNumber, 5)) + 1);
+            $orderNumber = 'order' . $latestOrderNumber + 1;
         } else {
             $orderNumber = 'order1';
         }
-        
+        // return ($latestOrderNumber);
+
+
         $deliveryFee = 50;
-        $totalAmount= $cart->total + $deliveryFee;
+        $totalAmount = $cart->total + $deliveryFee;
         //Create an order 
-        $order=Order::create([
+        $order = Order::create([
             'user_id' => $cart->user_id,
             'cart_id' => $cart->id,
             'total' => $totalAmount,
@@ -52,21 +53,21 @@ class OrderController extends Controller
         ]);
 
         $cart->update([
-             'is_paid' => true,
+            'is_paid' => true,
         ]);
 
         $response = [
             'message' => 'cart marked as completed',
             'order_number' => $orderNumber,
-            'cart_total'=> $cart->total,
-            'delivery_fee'=> $deliveryFee,
-            'total_amount'=> $totalAmount,
+            'cart_total' => $cart->total,
+            'delivery_fee' => $deliveryFee,
+            'total_amount' => $totalAmount,
             'order_created_date' => $order->created_at->toDateString(),
         ];
-        
 
 
-        return response()->json($response,200);
+
+        return response()->json($response, 200);
 
 
     }
