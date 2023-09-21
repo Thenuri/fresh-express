@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\PusherSample;
 use App\Http\Controllers\Approval;
 use App\Http\Controllers\AdminDashboardStatusController;
 use App\Http\Controllers\CustomerController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\ShowLatestCustomersController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +26,15 @@ use App\Http\Controllers\HomeController;
 // });
 // Route::get('/admin/approval', [AdminController::class, 'approval'])->name('admin.approval');
 
+Route::get('/dev', function () {
+    event((new NewOrderReceivedEvent(100)));
+});
 
-Route::get('/', [HomeController::class,'checkRoleid']);
+
+Route::get('/', [HomeController::class, 'checkRoleid']);
 
 Route::post('/admin/change-status/{user}', [Approval::class, 'switchStatus'])
-->name('admin.approve')->middleware('adminOrEmployee');
+    ->name('admin.approve')->middleware('adminOrEmployee');
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('dashboard/customer', CustomerController::class)->name('index', 'customer');
@@ -52,8 +58,8 @@ Route::get('/admin', [AdminDashboardStatusController::class, 'index'])
 // ->middleware(['adminOrEmployee', 'auth']);    
 
 Route::get('/employee', [AdminDashboardStatusController::class, 'index'])
- ->name('employee.dashboard')
- ->middleware(['adminOrEmployee', 'userApproved',]);
+    ->name('employee.dashboard')
+    ->middleware(['adminOrEmployee', 'userApproved',]);
 
 // Route::get('/employee', function () {
 //     return view('dashboard.index');
@@ -63,7 +69,7 @@ Route::get('/employee', [AdminDashboardStatusController::class, 'index'])
 Route::get('/driver', function () {
     return view('driverdash');
 })->name('driver.dashboard')
-->middleware(['userApproved']);
+    ->middleware(['userApproved']);
 
 Route::get('/customer-', function () {
     return view('customerdash');
@@ -75,7 +81,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/', [HomeController::class,'checkRoleid']);
+    Route::get('/', [HomeController::class, 'checkRoleid']);
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
@@ -100,4 +106,3 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 Route::get('/customerdetails/{user_id}', function ($userId) {
     return view('dashboard.customer-details', compact('userId'));
 })->name('customerdetails');
-

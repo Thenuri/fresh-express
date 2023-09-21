@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Events\NewOrderReceivedEvent;
 
 class OrderController extends Controller
 {
@@ -66,6 +67,7 @@ class OrderController extends Controller
         ];
 
 
+        event((new NewOrderReceivedEvent()));
 
         return response()->json($response, 200);
 
