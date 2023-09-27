@@ -30,6 +30,7 @@ Route::post('login', [ApiUserController::class, 'requestToken']);
 
 Route::post('register', [ApiUserController::class, 'register']);
 
+// Route::get('getCustomerDetails', [ApiUserController::class, 'getCustomerDetails']);
 Route::get('/products', [ProductController::class, 'index']);
 // Get product categories
 Route::get('/products/categories', [ProductController::class, 'getProductCategories']);
@@ -52,10 +53,13 @@ Route::get('/products/category/{categoryName}', [ProductController::class, 'getP
     
 // });
 
-
+ //adding  the items to cart 
 Route::middleware('auth:sanctum')->post('/add-to-cart', [CartController::class, 'addToCart']);
 
+//creatimg an order and gettin the order details
 Route::middleware('auth:sanctum')->post('/complete-cart/{cart}', [OrderController::class, 'completeCart']);
+
+
 
 // Route::post('/complete-cart/{cart}', 'OrderController@completeCart');
 
@@ -72,3 +76,10 @@ Route::middleware('auth:sanctum')->post('/complete-cart/{cart}', [OrderControlle
 Route::get('hello', function () {
     return 'Hello World';
 });
+//getting customer details to display in the profile page
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/customer/details', [ApiUserController::class, 'getCustomerDetails']);
+});
+
+//getting all the promotions
+Route::get('/promotions', [ApiUserController::class, 'getPromotions']);

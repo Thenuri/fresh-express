@@ -13,6 +13,8 @@ class AdminDashboardStatusController extends Controller
 {
     public function index()
     {
+        $products = products::all();
+
         $productsCount = products::count();
         $employeesCount = User::where('role_id', 2)->count();
         $customersCount = User::where('role_id', 4)->count();
@@ -22,8 +24,10 @@ class AdminDashboardStatusController extends Controller
         $cartCount = $this->getNumberOfCarts();
         $orderCount = $this->getNumberOfOrders();
         $weeklyRevenue = $this->getWeeklyRevenue();
+        $productSales = $this->getProductSales();
+        $categorySales = $this->getSalesByCategory();
 
-        return view('dashboard.index', compact('productsCount', 'employeesCount', 'customersCount', 'driversCount', 'latestOrders', 'mostOrderedProduct', 'cartCount' , 'orderCount', 'weeklyRevenue'));
+        return view('dashboard.index', compact('products','productsCount', 'employeesCount', 'customersCount', 'driversCount', 'latestOrders', 'mostOrderedProduct', 'cartCount' , 'orderCount', 'weeklyRevenue', 'productSales', 'categorySales'));
     }
 
     private function showLatestCustomers()
@@ -70,4 +74,58 @@ class AdminDashboardStatusController extends Controller
 
     return $weeklyRevenue;
     }
+
+    private function getProductSales()
+    {
+        // Use Eloquent relationships to get completed orders with their cart items
+        $completedOrders = Order::where('status', 'complete')
+            ->with('cartItems.product')
+            ->get();
+
+        // Initialize an empty array to store product sales data
+        $productSales = [];
+
+        // Iterate through completed orders and calculate product sales
+        foreach ($completedOrders as $order) {
+            foreach ($order->cartItems as $cartItem) {
+                $productId = $cartItem->product->id;
+                $quantitySold = $cartItem->quantity;
+
+                // Add product sales to the array or update existing sales
+                if (isset($productSales[$productId])) {
+                    $productSales[$productId] += $quantitySold;
+                } else {
+                    $productSales[$productId] = $quantitySold;
+                }
+            }
+        }
+
+        // Now $productSales contains total sales for each product
+        return $productSales;
+    }
+
+    private function getSalesByCategory()
+    {
+        $completedOrders = Order::where('status', 'complete')
+            ->with('cartItems.product') // Load products
+            ->get();
+
+        $categorySales = [];
+
+        foreach ($completedOrders as $order) {
+            foreach ($order->cartItems as $cartItem) {
+                $product = $cartItem->product;
+                $category = $product->category; // Assuming category is stored in the 'category' column
+
+                if (!isset($categorySales[$category])) {
+                    $categorySales[$category] = 0; // Initialize category sales
+                }
+
+                $categorySales[$category] += $cartItem->quantity;
+            }
+        }
+
+        return $categorySales;
+    }
+
 }

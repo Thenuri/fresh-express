@@ -10,9 +10,16 @@ class CustomerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $customers = User::where('role_id', 4)->get();
+        $query = $request->input('query');
+        $customers = User::where('role_id', 4)
+            ->where(function ($queryBuilder) use ($query) {
+                $queryBuilder->where('name', 'like', "%$query%")
+                    ->orWhere('address', 'like', "%$query%");
+            })
+            ->get();
+
         return view('dashboard.customer', ['customers' => $customers]);
     }
 

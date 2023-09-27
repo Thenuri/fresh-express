@@ -43,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::view('dashboard/orders', 'dashboard.orders')->name('orders');
     //Route::view('dashboard/products', 'dashboard.products')->name('products');
 });
+// Route::get('customers/search', 'CustomerController@search')->name('customers.search');
+// Route::resource('customers', 'CustomerController');
 
 // Route::get('/admin', function () {
 //     return view('dashboard.index');

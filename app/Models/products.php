@@ -20,6 +20,19 @@ class products extends Model
     // {
     //     return $this->belongsToMany(Order::class);
     // }
+
+    // public function carts()
+    // {
+    //     return $this->belongsToMany(Cart::class);
+    // }
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class);
+    }
+    
+
+
+
 }
 
 

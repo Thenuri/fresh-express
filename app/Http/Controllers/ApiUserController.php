@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Promotion;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -124,15 +125,29 @@ class ApiUserController extends Controller
             // Return the customer details as JSON response
             return response()->json([
                 'name' => $user->name,
-                'contactNumber' => $user->contact_number,
+                'contactNumber' => $user->phone,
                 'address' => $user->address,
-                'dateOfBirth' => $user->date_of_birth,
+                'dateOfBirth' => $user->dob,
                 'emailAddress' => $user->email,
             ]);
         } else {
             // Handle the case when customer details are not found
             return response()->json(['error' => 'Customer details not found'], 404);
         }
-    }   
+    } 
+    
+    public function getPromotions(Request $request): JsonResponse
+    {
+        // Retrieve promotion details from the database
+        $promotions = Promotion::all(); // This fetches all promotions; you can customize the query as needed
+
+        // Check if any promotions were found
+        if ($promotions->isEmpty()) {
+            return response()->json(['message' => 'No promotions found'], 404);
+        }
+
+        // Return the promotion details as a JSON response
+        return response()->json(['promotions' => $promotions]);
+    }
 
 }

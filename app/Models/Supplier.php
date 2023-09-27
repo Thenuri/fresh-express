@@ -15,6 +15,11 @@ class Supplier extends Model
         'Semail',
         'Product',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
 
 
