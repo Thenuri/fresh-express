@@ -3,6 +3,7 @@
 use App\Events\PusherSample;
 use App\Http\Controllers\Approval;
 use App\Http\Controllers\AdminDashboardStatusController;
+use App\Http\Controllers\customerApproval;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ShowLatestCustomersController;
@@ -36,9 +37,13 @@ Route::get('/', [HomeController::class, 'checkRoleid']);
 Route::post('/admin/change-status/{user}', [Approval::class, 'switchStatus'])
     ->name('admin.approve')->middleware('adminOrEmployee');
 
+// Route::post('/admin/change-status/{user}', [customerApproval::class, 'switch'])
+//     ->name('admin.customerapprove')->middleware('adminOrEmployee');
+
 Route::middleware(['auth'])->group(function () {
     Route::resource('dashboard/customer', CustomerController::class)->name('index', 'customer');
     Route::resource('dashboard/employee', EmployeeController::class)->name('index', 'employee');
+    // Route::resource('dashboard/customerApproval', customerApproval::class)->name('index', 'customerApproval');
     Route::resource('dashboard/approval', Approval::class)->name('index', 'approval');
     Route::view('dashboard/orders', 'dashboard.orders')->name('orders');
     //Route::view('dashboard/products', 'dashboard.products')->name('products');

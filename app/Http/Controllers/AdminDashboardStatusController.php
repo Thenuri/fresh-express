@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\products;
+use App\Models\Supplier;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -26,8 +27,9 @@ class AdminDashboardStatusController extends Controller
         $weeklyRevenue = $this->getWeeklyRevenue();
         $productSales = $this->getProductSales();
         $categorySales = $this->getSalesByCategory();
+        $supplierCount = $this->getSupplier();
 
-        return view('dashboard.index', compact('products','productsCount', 'employeesCount', 'customersCount', 'driversCount', 'latestOrders', 'mostOrderedProduct', 'cartCount' , 'orderCount', 'weeklyRevenue', 'productSales', 'categorySales'));
+        return view('dashboard.index', compact('products','productsCount', 'employeesCount', 'customersCount', 'driversCount', 'latestOrders', 'mostOrderedProduct', 'cartCount' , 'orderCount', 'weeklyRevenue', 'productSales', 'categorySales', 'supplierCount'));
     }
 
     private function showLatestCustomers()
@@ -126,6 +128,10 @@ class AdminDashboardStatusController extends Controller
         }
 
         return $categorySales;
+    }
+
+    private function getSupplier(){
+        return Supplier::count();
     }
 
 }

@@ -86,6 +86,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="bg-white mt-4 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <span
+                                class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{ $supplierCount }}</span>
+                            <h3 class="text-base font-normal text-gray-500">Total Suppliers</h3>
+                        </div>
+                        <div class="ml-5 w-0 flex items-center justify-end flex-1 text-green-500 text-base font-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 256 256"><path fill="orange" d="m251.14 115.54l-14-35A19.89 19.89 0 0 0 218.58 68H188v-4a12 12 0 0 0-12-12H24A20 20 0 0 0 4 72v112a20 20 0 0 0 20 20h14.06a36 36 0 0 0 67.88 0h44.12a36 36 0 0 0 67.88 0H232a20 20 0 0 0 20-20v-64a21.7 21.7 0 0 0-.86-4.46ZM188 92h27.88l6.4 16H188ZM72 204a12 12 0 1 1 12-12a12 12 0 0 1-12 12Zm92-41.92A36.32 36.32 0 0 0 150.06 180h-44.12a36 36 0 0 0-67.88 0H28v-40h136Zm0-46.08H28V76h136Zm20 88a12 12 0 1 1 12-12a12 12 0 0 1-12 12Zm44-24h-10.06A36.09 36.09 0 0 0 188 156.23V132h40Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
         <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -127,6 +140,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
