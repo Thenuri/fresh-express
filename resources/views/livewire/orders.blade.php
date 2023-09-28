@@ -80,13 +80,20 @@
 
                                 <th
                                     class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">
+                                    Select Driver</th>
+                                <th
+                                    class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">
                                     Ordered Products</th>
                                 <th
+                                
                                     class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">
                                     Quantity of the products</th>      
                                 <th
                                     class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">
                                     Status</th>
+                                <th
+                                    class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">
+                                </th>
                                 <th
                                     class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">
                                 </th>
@@ -120,6 +127,21 @@
                                     <td
                                         class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
                                         {{ $order->delivery_type }}</td>
+
+                                    <td
+                                        class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                        <select wire:model="selectedDriver" id="driver" name="driver" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                            <option value="">Select a driver</option>
+                                            @foreach ($drivers as $driver)
+                                                <option value="{{ $driver->id }}">{{ $driver->name }}</option>
+                                            @endforeach
+                                        </select>
+
+                                        @error('selectedDriver')
+                                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                                    @enderror
+                                
+                                    </td>    
                                     <td
                                         class="border-t-0 px-4 align-middle text-xs  font-medium text-gray-900  whitespace-nowrap p-4">
                                         <ul>

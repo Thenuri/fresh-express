@@ -40,6 +40,15 @@
                             <span class="font-bold w-24">Location:</span>
                             <span class="text-gray-700">{{$users->address}}</span>
                         </li>
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-32">LoyaltyPoints:</span>
+                                <span class="text-gray-700">{{ $totalLoyaltyPoints}}</span>
+                        </li>
+                       
+                        
+                        
+                        
+                        
                         <!-- Add more user details as needed -->
                     </ul>
                     @else

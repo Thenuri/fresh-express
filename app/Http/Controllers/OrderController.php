@@ -52,7 +52,14 @@ class OrderController extends Controller
             'delivery_type' => $request->delivery_type,
             'order_number' => $orderNumber,
         ]);
-
+        //calculate loyalty points based on the total amount
+        $loyaltyPointsEarned = $totalAmount*0.001;
+        //Add the loyalty points to the user
+        $user = $cart->user;
+        $user->loyaltyPoints()->create([
+            'points' => $loyaltyPointsEarned,
+            'order_id' => $order->id,
+        ]);
         $cart->update([
             'is_paid' => true,
         ]);
@@ -64,6 +71,7 @@ class OrderController extends Controller
             'delivery_fee' => $deliveryFee,
             'total_amount' => $totalAmount,
             'order_created_date' => $order->created_at->toDateString(),
+            'loyalty_points_earned' => $loyaltyPointsEarned,
         ];
 
 

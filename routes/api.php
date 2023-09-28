@@ -79,7 +79,10 @@ Route::get('hello', function () {
 //getting customer details to display in the profile page
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/customer/details', [ApiUserController::class, 'getCustomerDetails']);
+    Route::get('user-loyalty-points', [ApiUserController::class, 'getUserLoyaltyPoints']);
+
 });
 
 //getting all the promotions
 Route::get('/promotions', [ApiUserController::class, 'getPromotions']);
+

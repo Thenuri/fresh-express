@@ -150,4 +150,29 @@ class ApiUserController extends Controller
         return response()->json(['promotions' => $promotions]);
     }
 
+    public function getUserLoyaltyPoints(Request $request): JsonResponse{
+        // Retrieve the authenticated user based on the API token
+        $authenticatedUser = Auth::user();
+
+        // Check if the user is authenticated
+        if (!$authenticatedUser) {
+            return response()->json(['error' => 'User not authenticated'], 401);
+        }
+
+        // Load the authenticated user's loyalty points if it's a relationship
+        $authenticatedUser->load('loyaltyPoints');
+
+        // Calculate the total loyalty points for the authenticated user
+        $totalLoyaltyPoints = $authenticatedUser->loyaltyPoints->sum('points');
+
+        // Create a response with the authenticated user's loyalty points
+        $responseData = [
+            'user_id' => $authenticatedUser->id,
+            'name' => $authenticatedUser->name,
+            'total_loyalty_points' => $totalLoyaltyPoints,
+        ];
+
+        return response()->json($responseData);
+    }
+
 }

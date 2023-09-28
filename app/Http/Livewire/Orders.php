@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Mail\DispatchedOrder;
 use App\Models\Order;
+use App\Models\User;
 use App\Notifications\DispatchOrderNotification;
 use DB;
 use Illuminate\Support\Facades\Mail;
@@ -13,13 +14,19 @@ use Livewire\WithPagination;
 class Orders extends Component
 {   use WithPagination;
     public $q;
+    public $driver;
 
+    public $selectedDriver;
     // public $orders;
 
     protected $queryString = [
         'q' => ['except' => ''],
 
     ];
+    public function mount()
+    {
+        $this->drivers = User::where('role_id', 3)->get();
+    }
     public function render()
     {
         $newOrders = Order::with('user', 'cart', 'products')->where('status', 'pending')->when(
@@ -52,6 +59,7 @@ class Orders extends Component
             'newOrders' => $newOrders,
             'previousOrders' => $previousOrders,
             'canceledOrders' => $canceledOrders,
+            'drivers'=>$this->drivers,
         ]);
     }
 
@@ -79,12 +87,22 @@ class Orders extends Component
         $order = Order::find($orderId);
 
         if ($order) {
+
+            $this->validate([
+                'selectedDriver' => 'required',
+            ]);
+            //Find the driver
+            $driver = User::where('role_id', 3)->find($this->selectedDriver);
+            if (!$driver) {
+                session()->flash('error', 'Driver not found');
+                return;
+            }
             // Begin a database transaction
             DB::beginTransaction();
 
             try {
                 // Update the order status to "complete"
-                $order->update(['status' => 'complete']);
+                $order->update(['status' => 'complete', 'driver_id' => $driver->id]);
 
                 // Reduce product quantities and update dispatched_quantity
                 foreach ($order->cartItems as $cartItem) {
