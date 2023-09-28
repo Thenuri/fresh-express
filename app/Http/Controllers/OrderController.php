@@ -46,6 +46,7 @@ class OrderController extends Controller
             'cart_id' => $cart->id,
             'total' => $totalAmount,
             'status' => 'pending',
+            'delivery_status' => 'pending',
             'delivery_address' => $request->delivery_address,
             'ZIP_code' => $request->ZIP_code,
             'city' => $request->city,

@@ -86,5 +86,20 @@ class User extends Authenticatable
         return $this->hasMany(LoyaltyPoint::class);
     }
 
+    public function driverOrders()
+    {
+        return $this->hasMany(Order::class, 'driver_id');
+    }
+    // public function customer()
+    // {
+    //     return $this->belongsTo(User::class, 'user_id');
+    // }
+    public function driverOrdersWithCustomerDetails()
+    {
+        return Order::where('driver_id', $this->id)
+            ->with('customer') // Assuming you have a relationship named 'customer' in your Order model
+            ->get();
+    }
+
     
 }

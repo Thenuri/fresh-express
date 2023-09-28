@@ -97,13 +97,14 @@ class Orders extends Component
                 session()->flash('error', 'Driver not found');
                 return;
             }
+           
             // Begin a database transaction
             DB::beginTransaction();
 
             try {
                 // Update the order status to "complete"
                 $order->update(['status' => 'complete', 'driver_id' => $driver->id]);
-
+                
                 // Reduce product quantities and update dispatched_quantity
                 foreach ($order->cartItems as $cartItem) {
                     $product = $cartItem->product;

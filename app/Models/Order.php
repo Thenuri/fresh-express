@@ -20,6 +20,8 @@ class Order extends Model
         'city',
         'delivery_type',
         'order_number',
+        'driver_id',
+        'delivery_status',
 
     ];
 
@@ -46,6 +48,11 @@ class Order extends Model
     public function cartItems()
     {
         return $this->hasMany(CartItem::class ,'cart_id','cart_id');
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
     
 }

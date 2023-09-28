@@ -113,3 +113,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 Route::get('/customerdetails/{user_id}', function ($userId) {
     return view('dashboard.customer-details', compact('userId'));
 })->name('customerdetails');
+
+Route::get('/deliverdorders', function () {
+    return view('dashboard.deliverd', );
+})->name('deliverdorders');
