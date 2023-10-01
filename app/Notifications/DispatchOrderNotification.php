@@ -36,17 +36,38 @@ class DispatchOrderNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
+        $order = $this->order;
 
-        // dd($notifiable, $this->order);
-
-        return (new MailMessage)
+        $items = $order->cartItems; // Assuming you have a cartItems relationship
+        $deliveryFee = 50;
+        $content = (new MailMessage)
             ->subject('Dispatched Order')
-            ->line('The introduction to the notification.')
-            ->action('Notification Action', url('/'))
+            ->line('Your order has been dispatched. Here are the details:')
+            ->line('Order Number: ' . $order->order_number)
+            ->line('Total Price: LKR' . $order->total)
+            ->line('Delivery Fee: LKR' . $deliveryFee)
+            ->line('Purchased Products:')
+            ->line('---------------------')
+            ->line('Product Name | Quantity')
+            ->line('---------------------');
+
+        foreach ($items as $item) {
+            $content->line($item->product->name . ' | Quantity: ' . $item->quantity );
+        }
+
+        $loyaltyPoints = $order->customer->loyaltyPoints; // Assuming you have a loyaltyPoints relationship
+
+        $content->line('---------------------')
+            ->action('View Order', url('/'))
             ->line('Thank you for using our application!');
+
+        return $content;
     }
 
-
+    // private function addItemToMail($cartItem)
+    // {
+    //     $this->line($cartItem->product->name . ' | ' . $cartItem->quantity . ' | $' . $cartItem->price);
+    // }
 
     /**
      * Get the array representation of the notification.
