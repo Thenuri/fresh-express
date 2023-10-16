@@ -25,6 +25,7 @@
 8. [License](#license)
 
 
+## About the project
 
 This  project is a  CRM system for a grocery store (FRESH EXPRESS) that provides fresh items such as Meat, Vegetable, Fruits, and seafood. 
 
