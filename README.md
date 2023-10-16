@@ -17,7 +17,7 @@ This  project is a  CRM system for a grocery store (FRESH EXPRESS) that provides
 The CRM system manages inventory, measure sales, keep stack of the client information, order management, supplier management, send promotion details to customer.
 
 
-This system is built with :
+This system is built using :
 <div>
 <p><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo"></a>
 <a href="https://laravel-livewire.com/" target="_blank"><img src="public/images/image.png" width="100" alt="Livewire Logo"></a>
@@ -30,11 +30,11 @@ Authentication is done by using laravle Jetstream.
 
 ## Other technologies used 
 
- . Mailtrap 
-    On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the order information this is been done by mailtrap.
+ #### Mailtrap 
+    - On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the  orderinformation this is been done by mailtrap.
 
- . Pusher 
-    To inform the CRM users an order has beed arrived  the pusher has bee used.
+ #### Pusher 
+    - To inform the CRM users an order has beed arrived the pusher has bee used.
 
 
 
