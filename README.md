@@ -37,7 +37,7 @@ The CRM system manages inventory, measure sales, keep track of the client inform
 Laravel , Livewire , Tailwind CSS , Alphine JS
 
 Authentication is done using laravel Jetstream.
-<p align="center"><a href="https://jetstream.laravel.com/introduction.html" target="_blank"><img src="public/images/jetstream.png" width="100" alt="Laravel Logo"></a>
+<p align="center"><a href="https://jetstream.laravel.com/introduction.html" target="_blank"><img src="public/images/jetstream.png" width="200" alt="Laravel Logo"></a>
 </p> 
 
 ### Project Documemt
