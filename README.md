@@ -65,7 +65,7 @@ GitHub repo Link:<a href="https://github.com/Thenuri/mad_fresh_express.git" targ
 </p>
 
 #### Chart JS
-- To show the revenu of the week for the CRM System users char JS has been used.
+- To show the revenu of the week for the CRM System users chart JS has been used.
 <p align="center"><a href="https://www.chartjs.org/" target="_blank"><img src="public/images/idzj34qGQm.png" width="100" alt="Laravel Logo"></a>
 </p>
 
