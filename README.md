@@ -23,7 +23,7 @@ Authentication is done using laravle Jetstream.
 
 ### Customer Interactions
 
-For the customer interactions a mobile application has beed developed using Flutter & Dart.
+For the customer interactions a mobile application has been developed using Flutter & Dart.
 <div>
 <p align="center"><a href="" target="_blank"><img src="public/images/flutter-svgrepo-com.png" width="100" alt="Laravel Logo"></a>
 <a href="" target="_blank"><img src="public/images/dart-svgrepo-com.png" width="100" alt="Livewire Logo"></a>
@@ -53,8 +53,96 @@ If you want to download the project locally , follow the [installation]() below.
 
 ## Features
 
--Admin & E features 
+#### Admin Features 
+- Manage Accounts 
+- Admin Login
+- Can see customer details
+- Can see the drivers and other employees in the system
+- Add Promotions
+- Add Products
+- Dispatch an order
+- View Dliverd Orders
 
+#### Employee Features
+- Login
+- Register
+- Can see customer details
+- Can see the drivers in the system
+- Add Promotions
+- Add Products
+- Dispatch an order
 
+#### Customer Features
+- Add item to cart
+- Redeem loyalty points
+- Choose favorite item
+- Customer can see promotions
+- Login
+- Register
+- Update Profile
+- View Products
+- Select Favorite 
+- Send Feedback or Complain
 
+## Screenshots
 
+Below are the screenshots of the CRM system and the Mobile Application
+
+### CRM System
+
+<figure>
+<figcaption align="center">Login Page</figcaption>
+<img src="public/reademe-images/login.png">
+</figure>
+
+<figure>
+<figcaption align="center">Register Page</figcaption>
+<img src="public/reademe-images/register.png">
+</figure>
+
+<figure>
+<figcaption align="center">Admin & employe dashboard Page</figcaption>
+<img src="public/reademe-images/dash1.png">
+<img src="public/reademe-images/dash2.png">
+<img src="public/reademe-images/dash3.png">
+</figure>
+
+<figure>
+<figcaption align="center">Customer Page</figcaption>
+<img src="public/reademe-images/customer.png">
+</figure>
+
+<figure>
+<figcaption align="center">Products Page</figcaption>
+<img src="public/reademe-images/product.png">
+</figure>
+
+<figure>
+<figcaption align="center">Promotions Page</figcaption>
+<img src="public/reademe-images/promotions.png">
+</figure>
+
+<figure>
+<figcaption align="center">Employee Page</figcaption>
+<img src="public/reademe-images/employee.png">
+</figure>
+
+<figure>
+<figcaption align="center">Supplier Page</figcaption>
+<img src="public/reademe-images/supplier.png">
+</figure>
+
+<figure>
+<figcaption align="center">Order Page</figcaption>
+<img src="public/reademe-images/order.png">
+</figure>
+
+<figure>
+<figcaption align="center">Deliverd Order Page</figcaption>
+<img src="public/reademe-images/delivery.png">
+</figure>
+
+<figure>
+<figcaption align="center">Driver Dashboard Page</figcaption>
+<img src="public/reademe-images/deriver.png">
+</figure>
