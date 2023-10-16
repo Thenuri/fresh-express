@@ -46,8 +46,12 @@ GitHub repo Link:<a href="https://github.com/Thenuri/mad_fresh_express.git" targ
 #### Pusher 
 - To inform the CRM users an order has been arrived to the system this is been done using pusher.
 <p align="center"><a href="https://pusher.com/" target="_blank"><img src="public/images/pusher-svgrepo-com.png" width="100" alt="Laravel Logo"></a>
-</p> 
+</p>
 
+#### Chart JS
+- To show the revenu of the week for the CRM System users char JS has been used.
+<p align="center"><a href="https://www.chartjs.org/" target="_blank"><img src="public/images/idzj34qGQm.png" width="100" alt="Laravel Logo"></a>
+</p>
 
 This project is being developed as a requirement of a second year module called Server Side Programming.
 
@@ -167,8 +171,7 @@ pre-requisites  that are needed to run the project
 -   [Node.js](https://nodejs.org/en/download/)
 -   [NPM](https://www.npmjs.com/get-npm)
 -   [PHP](https://www.php.net/downloads.php)
--   Sqlite (or you can use )
--   [MySQL](https://dev.mysql.com/downloads/installer/)
+-   Sqlite (or you can use )[MySQL](https://dev.mysql.com/downloads/installer/)
 
 [ XAMPP ](https://www.apachefriends.org/download.html) or [WAMP server](https://www.wampserver.com/en/download-wampserver-64bits/) can be used for PHP and MySQL.
 
@@ -232,3 +235,7 @@ password : 'password'
 Employee<br>
 email : 'employee@gr.com'<br>
 password :'customerpassword'
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
