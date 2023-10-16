@@ -31,10 +31,9 @@ Authentication is done by using laravle Jetstream.
 ## Other technologies used 
 
  . Mailtrap 
-    
     On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the order information this is been done by mailtrap.
 
- .Pusher 
+ . Pusher 
     To inform the CRM users an order has beed arrived  the pusher has bee used.
 
 
