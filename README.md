@@ -4,25 +4,10 @@
 
 # Table of Contents
 1. [About the Project](#about-the-project)
-2. [CRM System Overview](#crm-system-overview)
-   2.1 [Technologies Used](#technologies-used)
-   2.2 [Project Document](#project-document)
-3. [Customer Interactions](#customer-interactions)
-4. [Other Technologies Used](#other-technologies-used)
-   4.1 [Mailtrap](#mailtrap)
-   4.2 [Pusher](#pusher)
-   4.3 [Chart JS](#chart-js)
-5. [Features](#features)
-   5.1 [Admin Features](#admin-features)
-   5.2 [Employee Features](#employee-features)
-   5.3 [Customer Features](#customer-features)
-6. [Screenshots](#screenshots)
-   6.1 [CRM System Screenshots](#crm-system-screenshots)
-   6.2 [Mobile Application Screenshots](#mobile-application-screenshots)
-7. [Installation](#installation)
-   7.1 [Prerequisites](#prerequisites)
-   7.2 [Installation Steps](#installation-steps)
-8. [License](#license)
+2. [Features](#features)
+3. [Screenshots](#screenshots)
+4. [Installation](#installation)
+5. [License](#license)
 
 
 ## About the project
