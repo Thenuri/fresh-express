@@ -4,8 +4,17 @@
 
 # Table of Contents
 1. [About the Project](#about-the-project)
+    - CRM technologies(#CRM  system is built using)
+    - Project Document(#Project Documemt)
+    - Customer Interaction(#Customer Interactions)
+    - Other technologies used(#Other technologies used)
 2. [Features](#features)
+    - Admin Features(#Admin Features)
+    - Employee Features(#Employee Features)
+    - Customer Features(#Customer Features)
 3. [Screenshots](#screenshots)
+    - CRM System(#CRM System)
+    - Mobile Application(#Mobile application)
 4. [Installation](#installation)
 5. [License](#license)
 
