@@ -40,6 +40,10 @@ Authentication is done using laravel Jetstream.
 ### Project Documemt
 [View the report here](https://github.com/Thenuri/fresh-express/blob/a2f9dfd9406559d83f2fadc68f1eda771b7f9a48/ssp-2-document%20(1).pdf)
 
+### Postman API Collection
+The Postman API Collection is avaliable here 
+[Postman API Collection](https://github.com/Thenuri/fresh-express/blob/master/FreshExpress%20API.postman_collection.json)
+
 
 ### Customer Interactions
 
@@ -162,7 +166,7 @@ Below are the screenshots of the CRM system and the Mobile Application
 </figure>
 
 <figure>
-<figcaption align="center">Deliverd Order Page</figcaption>
+<figcaption align="center">Delivered Order Page</figcaption>
 <img src="public/reademe-images/delivery.png">
 </figure>
 

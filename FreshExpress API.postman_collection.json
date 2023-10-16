@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "4550bba0-bdd7-4251-88ee-ab5dfeb7a552",
+		"name": "FreshExpress API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25062990"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/products",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "{{base_url}}/api/products/categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/products/categories",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"categories"
+					]
+				},
+				"description": "get categories"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Promotions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/promotions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"promotions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Promotions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/promotions",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"promotions"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register?email=th@gmial.com&password=456456456&ConfirmPassword=456456456&phone=0774897456&dob=2000/7/8&device_name=nokia&name=th&address=cddcdcd",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "th@gmial.com"
+						},
+						{
+							"key": "password",
+							"value": "456456456"
+						},
+						{
+							"key": "ConfirmPassword",
+							"value": "456456456"
+						},
+						{
+							"key": "phone",
+							"value": "0774897456"
+						},
+						{
+							"key": "dob",
+							"value": "2000/7/8"
+						},
+						{
+							"key": "device_name",
+							"value": "nokia"
+						},
+						{
+							"key": "name",
+							"value": "th"
+						},
+						{
+							"key": "address",
+							"value": "cddcdcd"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login?email=thenurihettiarachchi@gmail.com&password=customerpassword&device_name=nokia",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "thenurihettiarachchi@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "customerpassword"
+						},
+						{
+							"key": "device_name",
+							"value": "nokia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/add-to-cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "61|e1zW2J3mmM7f5Bybuavm1gdXwzhIrpCq1lLLxCWA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "product_id",
+						"value": "8",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "quantity",
+						"value": "1",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\":\"4\",\r\n    \"quantity\":\"100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add-to-cart",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add-to-cart"
+					]
+				},
+				"description": "Add to cart"
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}/api/complete-cart/30",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "61|e1zW2J3mmM7f5Bybuavm1gdXwzhIrpCq1lLLxCWA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"delivery_address\": \"123 Main St\",\r\n\"ZIP_code\": \"12345\",\r\n\"city\": \"Example City\",\r\n\"delivery_type\": \"Express\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/complete-cart/31",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"complete-cart",
+						"31"
+					]
+				},
+				"description": "create an order"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/customer/details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "64|HLqIlxWxmea2OcryAWMtR0IUNTmzAMH86zWP62W0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/customer/details",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"details"
+					]
+				},
+				"description": "get customer details for the relevent api token"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/user-loyalty-points",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "64|HLqIlxWxmea2OcryAWMtR0IUNTmzAMH86zWP62W0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user-loyalty-points",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user-loyalty-points"
+					]
+				},
+				"description": "Getting relevent customers loyalty points"
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}/api/products/category/Meat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/products/category/Meat",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"category",
+						"Meat"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
