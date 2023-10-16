@@ -33,12 +33,12 @@ Authentication is done by using laravle Jetstream.
 
 #### Mailtrap 
 - On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the orderinformation this is been done by mailtrap.
-<p><a href="https://mailtrap.io/" target="_blank"><img src="public/images/1667565915_Mailtrap_Icon.png" width="300" alt="Laravel Logo"></a>
+<p><a href="https://mailtrap.io/" target="_blank"><img src="public/images/1667565915_Mailtrap_Icon.png" width="100" alt="Laravel Logo"></a>
 </p> 
 
 #### Pusher 
 - To inform the CRM users an order has been arrived to the system this is been done using pusher.
-<p><a href="https://pusher.com/" target="_blank"><img src="public/images/pusher-svgrepo-com.png" width="300" alt="Laravel Logo"></a>
+<p><a href="https://pusher.com/" target="_blank"><img src="public/images/pusher-svgrepo-com.png" width="100" alt="Laravel Logo"></a>
 </p> 
 
 
