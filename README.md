@@ -125,7 +125,7 @@ Below are the screenshots of the CRM system and the Mobile Application
 </figure>
 
 <figure>
-<figcaption align="center">Admin & employe dashboard Page</figcaption>
+<figcaption align="center">Admin & employee dashboard Page</figcaption>
 <img src="public/reademe-images/dash1.png">
 <img src="public/reademe-images/dash2.png">
 <img src="public/reademe-images/dash3.png">
@@ -183,7 +183,7 @@ Below are the screenshots of the CRM system and the Mobile Application
 
 ## Installation
 
-pre-requisites  that are needed to run the project
+pre-requisites that are needed to run the project
 
 -   [Composer](https://getcomposer.org/download/)
 -   [Node.js](https://nodejs.org/en/download/)
