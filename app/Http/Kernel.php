@@ -71,6 +71,7 @@ class Kernel extends HttpKernel
         // Other middleware entries...
         'adminOrEmployee' => \App\Http\Middleware\RedirectIfNotAdminOrEmployee::class,
         'api.token' => \App\Http\Middleware\ApiTokenAuth::class,
+        'driver'=> \App\Http\Middleware\driver::class,
 
     ];
     

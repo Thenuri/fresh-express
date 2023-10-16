@@ -40,7 +40,7 @@ Route::post('/admin/change-status/{user}', [Approval::class, 'switchStatus'])
 // Route::post('/admin/change-status/{user}', [customerApproval::class, 'switch'])
 //     ->name('admin.customerapprove')->middleware('adminOrEmployee');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'adminOrEmployee'])->group(function () {
     Route::resource('dashboard/customer', CustomerController::class)->name('index', 'customer');
     Route::resource('dashboard/employee', EmployeeController::class)->name('index', 'employee');
     // Route::resource('dashboard/customerApproval', customerApproval::class)->name('index', 'customerApproval');
@@ -76,7 +76,7 @@ Route::get('/employee', [AdminDashboardStatusController::class, 'index'])
 Route::get('/driver', function () {
     return view('driverdash');
 })->name('driver.dashboard')
-    ->middleware(['userApproved']);
+    ->middleware(['userApproved','driver']);
 
 Route::get('/customer-', function () {
     return view('customerdash');
