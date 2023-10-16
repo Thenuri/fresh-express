@@ -2,7 +2,7 @@
 
 <p align="center"><img src="public/images/main.png" width="400" alt="Fresh express LOGO"></p>
 
-# Table of Contents
+## Table of Content
 1. [About the Project](#about-the-project)
     - [CRM Technologies](#CRM-system-is-built-using)
     - [Project Document](#project-document)
