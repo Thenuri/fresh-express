@@ -28,7 +28,7 @@ Laravel , Livewire , Tailwind CSS , Alphine JS
 
 Authentication is done by using laravle Jetstream.
 
-## Other technologies used 
+### Other technologies used 
 
 #### Mailtrap 
 - On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the orderinformation this is been done by mailtrap.
