@@ -35,7 +35,7 @@ The CRM system manages inventory, measure sales, keep track of the client inform
 </div>
 Laravel , Livewire , Tailwind CSS , Alphine JS
 
-Authentication is done using laravle Jetstream.
+Authentication is done using laravel Jetstream.
 
 ### Project Documemt
 [View the report here](https://github.com/Thenuri/fresh-express/blob/a2f9dfd9406559d83f2fadc68f1eda771b7f9a48/ssp-2-document%20(1).pdf)
@@ -55,7 +55,7 @@ GitHub repo Link:<a href="https://github.com/Thenuri/mad_fresh_express.git" targ
 ### Other technologies used 
 
 #### Mailtrap 
-- On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the orderinformation this is been done by mailtrap.
+- On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the order information this is been done by mailtrap.
 <p align="center"><a href="https://mailtrap.io/" target="_blank"><img src="public/images/1667565915_Mailtrap_Icon.png" width="100" alt="Laravel Logo"></a>
 </p> 
 
