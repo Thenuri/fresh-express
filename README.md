@@ -21,8 +21,8 @@ Laravel , Livewire , Tailwind CSS , Alphine JS
 
 Authentication is done using laravle Jetstream.
 
-## Project Documemt
-[View the report here]()
+### Project Documemt
+[View the report here](https://github.com/Thenuri/fresh-express/blob/a2f9dfd9406559d83f2fadc68f1eda771b7f9a48/ssp-2-document%20(1).pdf)
 
 
 ### Customer Interactions
@@ -219,7 +219,7 @@ If you are using sqlite use laravel docs and follow the instructions https://lar
     ```sh
     php artisan serve
     ```
-11. Click on the site address to chech the site in your terminal after typint this (php artisan serve) command 
+11. Click on the site address to check the site in your terminal after typing this (php artisan serve) command 
 http://127.0.0.1:8000
 
 The admin user and some of the employees are being created using the database seeder,
