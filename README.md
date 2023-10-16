@@ -28,7 +28,7 @@ For the customer interactions a mobile application has beed developed using Flut
 <p align="center"><a href="" target="_blank"><img src="public/images/flutter-svgrepo-com.png" width="100" alt="Laravel Logo"></a>
 <a href="" target="_blank"><img src="public/images/dart-svgrepo-com.png" width="100" alt="Livewire Logo"></a>
 </p> 
-Git hub repo Link:<a href="https://github.com/Thenuri/mad_fresh_express.git" target="_blank"></a>
+GitHub repo Link:<a href="https://github.com/Thenuri/mad_fresh_express.git" target="_blank">Mobile Application(FRESH EXPRESS)</a>
 
 </div>
 
