@@ -5,8 +5,8 @@
 ## Table of Content
 1. [About the Project](#about-the-project)
     - [CRM Technologies](#CRM-system-is-built-using)
-    - [Postman API Collection](#Postman-API-Collection)
     - [Project Document](#project-document)
+    - [Postman API Collection](#Postman-API-Collection)
     - [Customer Interaction](#customer-interaction)
     - [Other Technologies Used](#other-technologies-used)
 2. [Features](#features)
