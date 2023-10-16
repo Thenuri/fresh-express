@@ -168,7 +168,7 @@ pre-requisites  that are needed to run the project
 -   [NPM](https://www.npmjs.com/get-npm)
 -   [PHP](https://www.php.net/downloads.php)
 -   Sqlite (or you can use )
--   [MySQL] (https://dev.mysql.com/downloads/installer/)
+-   [MySQL](https://dev.mysql.com/downloads/installer/)
 
 [ XAMPP ](https://www.apachefriends.org/download.html) or [WAMP server](https://www.wampserver.com/en/download-wampserver-64bits/) can be used for PHP and MySQL.
 
