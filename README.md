@@ -16,8 +16,6 @@ This  project is a  CRM system for a grocery store (FRESH EXPRESS) that provides
 
 The CRM system manages inventory, measure sales, keep stack of the client information, order management, supplier management, send promotion details to customer.
 
-On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the order information this is been done by
-mailtrap. 
 
 This system is built with :
 <div>
@@ -26,4 +24,23 @@ This system is built with :
 <a href="https://tailwindcss.com/" target="_blank"><img src="public/images/tailwind-css-svgrepo-com.png" width="100" alt="tailwind css"></a>
 <a href="https://alpinejs.dev/" target="_blank"><img src="public/images/Alpine.js.png" width="100" alt="alphine js"></a>
 </p> 
+Laravel , Livewire , Tailwind CSS , Alphine JS
+
+Authentication is done by using laravle Jetstream.
+
+## Other technologies used 
+
+ . Mailtrap 
+    
+    On completion of dispatch of each order system will send an email to the customer saying the order has been dispatched with the order information this is been done by mailtrap.
+
+ .Pusher 
+    To inform the CRM users an order has beed arrived  the pusher has bee used.
+
+
+
+This project is being developed as a requirement of a second year module called Server Side Programming.
+
+
+If you want to download the project locally , follow the installation below.
 </div>
